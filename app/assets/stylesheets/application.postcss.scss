@@ -1,0 +1,8 @@
+@import "./config/_reset.scss";
+
+$some-var: black;
+
+:root {
+  // Main theme color
+  --color: $some-var;
+}
