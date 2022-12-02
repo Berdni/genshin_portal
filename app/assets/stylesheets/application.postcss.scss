@@ -1,8 +1,13 @@
+// Mixins
+@import "./mixins/_media.scss";
+
+// Configuration
 @import "./config/_reset.scss";
+@import "./config/_fonts.scss";
 
-$some-var: black;
+// Layouts
+@import "./layouts/_main.scss";
+@import "./layouts/_users.scss";
 
-:root {
-  // Main theme color
-  --color: $some-var;
-}
+// Components
+@import "./components/_field.scss";
