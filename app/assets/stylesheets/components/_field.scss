@@ -1,30 +1,79 @@
 .field {
-  &__label {
-    position: absolute;
-    top: 0;
-    font-size: 30px;
-    margin: 10px;
-    padding: 0 10px;
-    background-color: teal;
-    transition: top .2s ease-in-out,
-    font-size .2s ease-in-out;
+  &_separator {
+    margin-top: $space-lg;
+  }
 
-    &_active {
-      top: -25px;
-      font-size: 20px;
+  &_with_errors {
+    display: inline;
+
+    & .field__label {
+      color: var(--color-danger-600);
     }
+
+    & + .field__additional-info {
+      color: var(--color-danger-600);
+    }
+  }
+
+  &__error {
+    display: inline;
+    font-size: 0.75rem;
+    padding-left: $border-radius-md;
+    color: var(--color-danger-600);
+  }
+
+  &__label {
+    font-size: 1rem;
+    padding-left: $border-radius-md;
+    color: var(--color-black-900);
+  }
+
+  &__additional-info {
+    font-size: 1rem;
+    color: var(--color-black-900);
+    font-style: italic;
   }
 
   &__input {
     width: 100%;
-    padding: 20px;
-    border: 1px solid white;
-    font-size: 20px;
-    background-color: teal;
-    color: white;
+    font-size: 1rem;
+    padding: 0.675rem 0.675rem;
+    color: var(--color-black-900);
+    border: 1px solid var(--color-black-300);
+    border-radius: $border-radius-md;
+    background-color: var(--color-bright-800);
+    margin-top: 0.25rem;
 
     &:focus {
       outline: none;
+    }
+  }
+}
+
+.action {
+  &_separator {
+    margin-top: $space-lg;
+  }
+
+  &__submit {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: var(--color-primary-700);
+    color: var(--color-bright-900);
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    outline: inherit;
+    border: none;
+    transition: background-color 200ms ease-out;
+
+    &:hover {
+      background-color: var(--color-primary-800);
+    }
+
+    &:active {
+      background-color: var(--color-primary-900);
     }
   }
 }

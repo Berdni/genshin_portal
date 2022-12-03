@@ -4,5 +4,5 @@
 
 import { application } from "./application"
 
-import FieldController from "./field_controller"
-application.register("field", FieldController)
+// import FieldController from "./field_controller"
+// application.register("field", FieldController)

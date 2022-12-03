@@ -1,5 +1,27 @@
 .auth {
-  &__container {
-    max-width: max(100%, 16rem);
+  max-width: min(100%, 30rem);
+  border-radius: $border-radius-md;
+  background-color: var(--color-black-100);
+
+  &__wrapper {
+    padding: $space-xl;
+  }
+
+  &__shared-links {
+    text-align: center;
+    margin-top: $space-lg;
+
+    & .auth__shared-link:not(:first-child) {
+      margin-top: $space-md;
+    }
+  }
+
+  &__shared-link {
+    display: block;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--color-black-600);;
+    color: var(--color-black-600);
   }
 }

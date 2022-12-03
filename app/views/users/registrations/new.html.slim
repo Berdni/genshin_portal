@@ -28,9 +28,32 @@
 
 / <%= render "users/shared/links" %>
 
-.auth
-  .auth__container
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      .field[data-controller='field']
-        = f.label :email, class: 'field__label', data: { 'field-target': 'label' }
-        = f.email_field :email, autocomplete: 'email', class: 'field__input', data: { 'field-target': 'input', action: 'focus->field#focus blur->field#blur' }
+.container
+  .auth
+    .auth__wrapper
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .field
+          = f.label :email, class: 'field__label'
+          = f.email_field :email, autocomplete: 'email', class: 'field__input'
+          - if resource.errors.messages[:email].any?
+            = form_errors(resource.errors.messages[:email])
+
+        .field.field_separator
+          = f.label :password, class: 'field__label'
+          - if @minimum_password_length
+            em.field__additional-info< = t('users.shared.minimum_password_length', count: @minimum_password_length)
+          = f.password_field :password, autocomplete: 'new-password', class: 'field__input'
+          - if resource.errors.messages[:password].any?
+            = form_errors(resource.errors.messages[:password])
+
+        .field.field_separator
+          = f.label :password_confirmation, class: 'field__label'
+          = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'field__input'
+          - if resource.errors.messages[:password_confirmation].any?
+            = form_errors(resource.errors.messages[:password_confirmation])
+
+        .action.action_separator
+          = f.submit t('users.registrations.new.sign_up'), class: 'action__submit'
+
+        .auth__shared-links
+          = render 'users/shared/links'

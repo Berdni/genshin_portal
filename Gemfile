@@ -47,6 +47,7 @@ gem 'bootsnap', require: false
 
 gem 'devise'
 gem 'devise-i18n'
+gem 'russian'
 gem 'slim'
 
 group :development, :test do
