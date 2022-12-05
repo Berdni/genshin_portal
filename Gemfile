@@ -48,7 +48,9 @@ gem 'bootsnap', require: false
 gem 'administrate'
 gem 'devise'
 gem 'devise-i18n'
+gem 'image_processing'
 gem 'russian'
+gem 'shrine'
 gem 'slim'
 
 group :development, :test do
