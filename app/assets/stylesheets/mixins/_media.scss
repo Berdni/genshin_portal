@@ -7,8 +7,28 @@ $media: (
 );
 
 @mixin md($breakpoint) {
-  @each $size in $media {
-    @media screen and (min-width: $size) {
+  @if $breakpoint == sm {
+    @media screen and (min-width: 576px) {
+      @content;
+    }
+  }
+  @if $breakpoint == md {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == lg {
+    @media screen and (min-width: 992px) {
+      @content;
+    }
+  }
+  @if $breakpoint == xl {
+    @media screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == 2xl {
+    @media screen and (min-width: 1400px) {
       @content;
     }
   }

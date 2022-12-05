@@ -1,6 +1,6 @@
-.container
-  .auth
-    .auth__wrapper
+.container.auth
+  .auth__form
+    .auth__form-wrapper
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         .field
           = f.label :email, class: 'field__label'
