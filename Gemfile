@@ -48,6 +48,8 @@ gem 'bootsnap', require: false
 gem 'administrate'
 gem 'devise'
 gem 'devise-i18n'
+gem 'enumerize'
+gem 'friendly_id'
 gem 'image_processing'
 gem 'russian'
 gem 'shrine'
