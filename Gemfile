@@ -46,6 +46,7 @@ gem 'bootsnap', require: false
 # gem "sassc-rails"
 
 gem 'administrate'
+gem 'administrate-field-enumerize'
 gem 'devise'
 gem 'devise-i18n'
 gem 'enumerize'
@@ -53,6 +54,7 @@ gem 'friendly_id'
 gem 'image_processing'
 gem 'russian'
 gem 'shrine'
+gem 'sidekiq'
 gem 'slim'
 
 group :development, :test do

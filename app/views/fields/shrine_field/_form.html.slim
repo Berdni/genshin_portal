@@ -1,0 +1,11 @@
+.field-unit__label
+  = f.label field.attribute
+
+.field-unit__field
+  / = f.label field
+  - unless field.url_only?
+    = image_tag field.url if field.url.present?
+  / = f.hidden_field field, value: f.object.cached_image_data
+  / = f.file_field field
+  = f.hidden_field field.attribute, value: field.cached_value
+  = f.file_field field.attribute

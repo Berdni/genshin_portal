@@ -1,13 +1,15 @@
-Rails.application.routes.draw do
-  namespace :admin do
-      resources :users
+require 'sidekiq/web'
 
-      root to: "users#index"
-    end
+Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#home'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  namespace :admin do
+    resources :users
+    resources :heroes
+
+    root to: 'users#index'
+  end
+
+  mount Sidekiq::Web => '/sidekiq'
 end

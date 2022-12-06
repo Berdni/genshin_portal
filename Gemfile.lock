@@ -76,6 +76,10 @@ GEM
       kaminari (>= 1.0)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    administrate-field-enumerize (1.0.0)
+      administrate (~> 0.8)
+      enumerize (~> 2.1)
+      rails (>= 5.0.0)
     ast (2.4.2)
     bcrypt (3.1.18)
     bindex (0.8.1)
@@ -96,6 +100,7 @@ GEM
       xpath (~> 3.2)
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
+    connection_pool (2.3.0)
     content_disposition (1.0.0)
     crass (1.0.6)
     cssbundling-rails (1.1.1)
@@ -221,6 +226,8 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     redis (4.8.0)
+    redis-client (0.11.2)
+      connection_pool
     regexp_parser (2.6.1)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -291,6 +298,11 @@ GEM
     shrine (3.4.0)
       content_disposition (~> 1.0)
       down (~> 5.1)
+    sidekiq (7.0.1)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.9.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -341,6 +353,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  administrate-field-enumerize
   bootsnap
   bullet
   capybara
@@ -367,6 +380,7 @@ DEPENDENCIES
   selenium-webdriver
   shoulda-matchers
   shrine
+  sidekiq
   slim
   sprockets-rails
   stimulus-rails
