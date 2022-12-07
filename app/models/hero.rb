@@ -13,4 +13,8 @@ class Hero < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :rarity, presence: true
   validates :element, presence: true
+
+  def should_generate_new_friendly_id?
+    name_changed?
+  end
 end

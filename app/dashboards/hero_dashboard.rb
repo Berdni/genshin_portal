@@ -51,7 +51,6 @@ class HeroDashboard < Administrate::BaseDashboard
     icon
     name
     rarity
-    slug
   ].freeze
 
   # COLLECTION_FILTERS
